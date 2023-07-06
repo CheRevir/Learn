@@ -22,16 +22,16 @@ dependencies {
 gradlePlugin {
     plugins {
         register("logicPlugin") {
-            id = "com.cere.build.logic"
-            implementationClass = "com.cere.build.logic.LogicPlugin"
+            id = "com.cere.plugin.logic"
+            implementationClass = "com.cere.plugin.logic.LogicPlugin"
         }
         register("applicationPlugin") {
             id = "com.cere.application"
-            implementationClass = "com.cere.build.logic.AndroidApplicationPlugin"
+            implementationClass = "com.cere.plugin.logic.AndroidApplicationPlugin"
         }
         register("hiltPlugin") {
             id = "com.cere.hilt"
-            implementationClass = "com.cere.build.logic.AndroidHiltPlugin"
+            implementationClass = "com.cere.plugin.logic.AndroidHiltPlugin"
         }
     }
 }

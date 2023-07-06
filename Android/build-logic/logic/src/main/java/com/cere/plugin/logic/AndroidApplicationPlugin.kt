@@ -1,4 +1,4 @@
-package com.cere.build.logic
+package com.cere.plugin.logic
 
 import com.android.build.api.dsl.ApplicationExtension
 import org.gradle.api.JavaVersion

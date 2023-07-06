@@ -1,4 +1,4 @@
-package com.cere.build.logic
+package com.cere.plugin.logic
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

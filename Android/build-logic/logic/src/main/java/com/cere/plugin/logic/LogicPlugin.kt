@@ -1,6 +1,6 @@
-package com.cere.build.logic
+package com.cere.plugin.logic
 
-import com.cere.build.task.LogicTask
+import com.cere.plugin.task.LogicTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 

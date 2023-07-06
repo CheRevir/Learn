@@ -1,4 +1,4 @@
-package com.cere.build.logic
+package com.cere.plugin.logic
 
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalog
