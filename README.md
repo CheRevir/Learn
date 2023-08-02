@@ -1,4 +1,6 @@
 # Learn
 
-##### [[Gradle]]
+##### [`Gradle`](Document/Gradle/Gradle.md)
+
+
 
