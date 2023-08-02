@@ -5,6 +5,7 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -37,6 +38,21 @@ class AndroidApplicationPlugin : Plugin<Project> {
                 buildFeatures {
                     viewBinding = true
                     dataBinding = true
+                }
+
+                dependencies {
+                    "implementation"(libs.findLibrary("androidx.core.ktx").get())
+                    add("implementation", libs.findLibrary("androidx.appcompat").get())
+                    add("implementation", libs.findLibrary("androidx.material").get())
+                    add("implementation", libs.findLibrary("androidx.constraintlayout").get())
+                    add("implementation", libs.findLibrary("androidx.lifecycle.livedata").get())
+                    add("implementation", libs.findLibrary("androidx.lifecycle.viewmodel").get())
+                    add("implementation", libs.findLibrary("androidx.navigation.fragment").get())
+                    add("implementation", libs.findLibrary("androidx.navigation.ui").get())
+
+                    "testImplementation"(libs.findLibrary("junit").get())
+                    "androidTestImplementation"(libs.findLibrary("androidx.test.ext").get())
+                    "androidTestImplementation"(libs.findLibrary("androidx.espresso.core").get())
                 }
             }
         }
