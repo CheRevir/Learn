@@ -1,0 +1,32 @@
+import org.jetbrains.kotlin.konan.file.File
+
+pluginManagement {
+    includeBuild("../build-logic")
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    versionCatalogs {
+        create("libs") {
+            from(files("../gradle/libs.versions.toml"))
+        }
+    }
+}
+
+rootProject.name = "flutter-core"
+include ':core'
+
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+        settingsDir.parentFile,
+        'flutter_module/.android/include_flutter.groovy'
+))
+include ':flutter_module'
+project(':flutter_module').projectDir = new File('../flutter_module')
