@@ -1,14 +1,12 @@
 package com.cere.plugin.logic
 
 import com.android.build.api.dsl.ApplicationExtension
-import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.withType
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+@Suppress("unused")
 class AndroidApplicationPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
@@ -18,22 +16,8 @@ class AndroidApplicationPlugin : Plugin<Project> {
             }
 
             extensions.configure<ApplicationExtension> {
-                println(this.defaultConfig.applicationId)
 
-                compileSdk = libs.findVersion("compileSdk").get().requiredVersion.toInt()
-
-                println(compileSdk)
-
-                compileOptions {
-                    sourceCompatibility = JavaVersion.VERSION_11
-                    targetCompatibility = JavaVersion.VERSION_11
-                }
-
-                tasks.withType<KotlinCompile>().configureEach {
-                    kotlinOptions {
-                        jvmTarget = JavaVersion.VERSION_11.toString()
-                    }
-                }
+                configureKotlinAndroid(this)
 
                 buildFeatures {
                     viewBinding = true
