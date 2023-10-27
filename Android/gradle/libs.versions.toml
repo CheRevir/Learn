@@ -37,6 +37,8 @@ androidx-startup = { group = "androidx.startup", name = "startup-runtime", versi
 androidx-test-ext = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidxTestExt" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxEspressoCore" }
 
+android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version = "2.0.3" }
+
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
