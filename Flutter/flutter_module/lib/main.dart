@@ -1,6 +1,86 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_boost/flutter_boost.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  AppWidgetsFlutterBinding();
+  RouterManager.register(MyAppRouter());
+  runApp(App(router: RouterManager.getRouter()));
+}
+
+class AppWidgetsFlutterBinding extends WidgetsFlutterBinding
+    with BoostFlutterBinding {}
+
+class RouterManager {
+  static final List<BasePageRouter> routers = [];
+
+  static void register(BasePageRouter router) {
+    routers.add(router);
+  }
+
+  static Map<String, FlutterBoostRouteFactory> getRouter() {
+    Map<String, FlutterBoostRouteFactory> map = {};
+    for (var item in routers) {
+      map.addAll(item.router);
+    }
+    return map;
+  }
+}
+
+class App extends StatefulWidget {
+  final Map<String, FlutterBoostRouteFactory> router;
+
+  const App({super.key, required this.router});
+
+  @override
+  State<StatefulWidget> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  List<BasePageRouter> list = [];
+
+  @override
+  Widget build(BuildContext context) {
+    return FlutterBoostApp(
+      _routeFactory,
+      appBuilder: _appBuilder,
+    );
+  }
+
+  Route<dynamic>? _routeFactory(RouteSettings settings, String? uniqueId) {
+    FlutterBoostRouteFactory? factory = widget.router[settings.name];
+    if (factory == null) {
+      return null;
+    }
+    return factory(settings, uniqueId);
+  }
+
+  Widget _appBuilder(Widget widget) {
+    return MaterialApp(
+      home: widget,
+      debugShowCheckedModeBanner: true,
+      builder: (_, __) {
+        return widget;
+      },
+    );
+  }
+}
+
+mixin BasePageRouter {
+  abstract Map<String, FlutterBoostRouteFactory> router;
+}
+
+class MyAppRouter with BasePageRouter {
+  @override
+  Map<String, FlutterBoostRouteFactory> router = {
+    'home': (settings, uniqueId) {
+      return MaterialPageRoute(
+          settings: settings,
+          builder: (_) {
+            return const MyApp();
+          });
+    },
+  };
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -97,7 +177,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineLarge,
             ),
           ],
         ),

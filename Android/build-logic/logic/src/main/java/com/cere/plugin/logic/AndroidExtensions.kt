@@ -3,7 +3,6 @@ package com.cere.plugin.logic
 import com.android.build.api.dsl.ApplicationExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -21,14 +20,14 @@ fun Project.configureKotlinAndroid(extension: ApplicationExtension) {
         compileOptions {
             sourceCompatibility = JavaVersion.VERSION_11
             targetCompatibility = JavaVersion.VERSION_11
-            isCoreLibraryDesugaringEnabled = true
+            //isCoreLibraryDesugaringEnabled = true
         }
     }
     configureKotlin()
 
-    dependencies {
+    /*dependencies {
         add("coreLibraryDesugaring", libs.findLibrary("android.desugarJdkLibs").get())
-    }
+    }*/
 }
 
 fun Project.configureKotlin() {

@@ -7,6 +7,7 @@ import androidx.startup.Initializer
 /*
  * Created by CheRevir on 2023/6/26
  */
+@Suppress("unused")
 class AppInitializer : Initializer<Unit> {
     override fun create(context: Context) {
         Log.e("TAG", "create: ${context.packageName}")

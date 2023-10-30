@@ -1,4 +1,4 @@
-name: core
+name: app
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -12,9 +12,9 @@ description: A new Flutter project.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 #
-# This version is used _only_ for the Runner core, which is used if you just do
-# a `flutter run` or a `flutter make-host-core-editable`. It has no impact
-# on any other native host core that you embed your Flutter project into.
+# This version is used _only_ for the Runner app, which is used if you just do
+# a `flutter run` or a `flutter make-host-app-editable`. It has no impact
+# on any other native host app that you embed your Flutter project into.
 version: 1.0.0+1
 
 environment:
@@ -81,12 +81,12 @@ flutter:
 
 
   # This section identifies your Flutter project as a module meant for
-  # embedding in a native host core.  These identifiers should _not_ ordinarily
+  # embedding in a native host app.  These identifiers should _not_ ordinarily
   # be changed after generation - they are used to ensure that the tooling can
   # maintain consistency when adding or modifying assets and plugins.
   # They also do not have any bearing on your native host application's
   # identifiers, which may be completely independent or the same as these.
   module:
     androidX: true
-    androidPackage: com.cere.flutter.core.core
-    iosBundleIdentifier: com.cere.flutter.core.core
+    androidPackage: com.cere.flutter.app.app
+    iosBundleIdentifier: com.cere.flutter.app.app

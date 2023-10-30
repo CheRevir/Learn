@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 pluginManagement {
     includeBuild("build-logic")
     repositories {
@@ -7,7 +9,7 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
     repositories {
         google()
         mavenCentral()
@@ -16,3 +18,8 @@ dependencyResolutionManagement {
 rootProject.name = "Android"
 include(":app")
 include(":flutter-core")
+
+
+apply {
+    from("flutter.settings.gradle")
+}
