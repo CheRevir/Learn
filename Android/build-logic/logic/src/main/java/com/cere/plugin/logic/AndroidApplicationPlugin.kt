@@ -19,6 +19,7 @@ class AndroidApplicationPlugin : Plugin<Project> {
 
                 configureKotlinAndroid(this)
 
+                @Suppress("UnstableApiUsage")
                 buildFeatures {
                     viewBinding = true
                     dataBinding = true
@@ -27,16 +28,18 @@ class AndroidApplicationPlugin : Plugin<Project> {
                 dependencies {
                     "implementation"(libs.findLibrary("androidx.core.ktx").get())
                     add("implementation", libs.findLibrary("androidx.appcompat").get())
-                    add("implementation", libs.findLibrary("androidx.material").get())
                     add("implementation", libs.findLibrary("androidx.constraintlayout").get())
                     add("implementation", libs.findLibrary("androidx.lifecycle.livedata").get())
                     add("implementation", libs.findLibrary("androidx.lifecycle.viewmodel").get())
                     add("implementation", libs.findLibrary("androidx.navigation.fragment").get())
                     add("implementation", libs.findLibrary("androidx.navigation.ui").get())
+                    add("implementation", libs.findLibrary("material").get())
 
                     "testImplementation"(libs.findLibrary("junit").get())
-                    "androidTestImplementation"(libs.findLibrary("androidx.test.ext").get())
-                    "androidTestImplementation"(libs.findLibrary("androidx.espresso.core").get())
+                    "androidTestImplementation"(libs.findLibrary("androidx.test.ext.junit").get())
+                    "androidTestImplementation"(
+                        libs.findLibrary("androidx.test.espresso.core").get()
+                    )
                 }
             }
         }
