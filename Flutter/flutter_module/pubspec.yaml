@@ -32,6 +32,7 @@ dependencies:
     git:
       url: 'https://github.com/alibaba/flutter_boost.git'
       ref: '4.3.0'
+  get: 4.6.5
 
 dev_dependencies:
   flutter_test:
@@ -88,5 +89,5 @@ flutter:
   # identifiers, which may be completely independent or the same as these.
   module:
     androidX: true
-    androidPackage: com.cere.flutter.app.app
-    iosBundleIdentifier: com.cere.flutter.app.app
+    androidPackage: com.cere.flutter.module
+    iosBundleIdentifier: com.cere.flutter.module
