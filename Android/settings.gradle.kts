@@ -17,6 +17,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Android"
 include(":app")
+include(":core:base")
 include(":flutter-core")
 
 
