@@ -24,3 +24,4 @@ apply {
     from("flutter.settings.gradle")
 }
 include(":example")
+include(":feature:login")
