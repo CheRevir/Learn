@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.cere.core"
+    namespace = "com.cere.core.base"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
@@ -45,6 +45,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)

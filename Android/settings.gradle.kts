@@ -20,7 +20,7 @@ include(":app")
 include(":core:base")
 include(":flutter-core")
 
-
 apply {
     from("flutter.settings.gradle")
 }
+include(":example")
