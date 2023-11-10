@@ -11,6 +11,7 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true"
+            android:configChanges="orientation"
             android:label="登录">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
