@@ -1,11 +1,11 @@
 package com.cere.learn.login
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.cere.core.base.BaseActivity
+import com.cere.learn.login.databinding.ActivityLoginBinding
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
     }
 }
