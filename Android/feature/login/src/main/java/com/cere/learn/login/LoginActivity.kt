@@ -3,6 +3,7 @@ package com.cere.learn.login
 import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import com.cere.core.base.BaseVMActivity
 import com.cere.core.base.LoadingState
 import com.cere.core.base.Progress
@@ -10,6 +11,8 @@ import com.cere.learn.login.databinding.ActivityLoginBinding
 
 class LoginActivity :
     BaseVMActivity<ActivityLoginBinding, LoginViewModel>(R.layout.activity_login) {
+     val view :LoginViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

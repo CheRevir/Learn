@@ -18,7 +18,7 @@ class FlutterDelegate : FlutterBoostDelegate {
         Log.e("Flutter", "pushFlutterRoute: $options")
         val intent: Intent =
             FlutterBoostActivity.CachedEngineIntentBuilder(FlutterBoostActivity::class.java)
-                .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.transparent)
+                .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.opaque)
                 .destroyEngineWithActivity(false)
                 .uniqueId(options.uniqueId())
                 .url(options.pageName())
