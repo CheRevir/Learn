@@ -9,7 +9,7 @@ import com.cere.core.base.LoadingState
 import com.cere.core.base.Progress
 import com.cere.learn.login.databinding.ActivityLoginBinding
 
-class LoginActivity :
+class  LoginActivity :
     BaseVMActivity<ActivityLoginBinding, LoginViewModel>(R.layout.activity_login) {
      val view :LoginViewModel by viewModels()
 
